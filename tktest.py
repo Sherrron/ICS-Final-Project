@@ -8,12 +8,13 @@ class mygui:
         self.top_frame = tkinter.Frame(self.main_window)
         self.bottom_frame = tkinter.Frame(self.main_window)
         
-        self.label1 = tkinter.Label(self.main_window, 
-                                   text = 'FakeSheron')
-        self.label2 = tkinter.Label(self.main_window, 
-                                   text = 'Blah')
-        self.label1.pack(side = 'top')
-        self.label2.pack(side = 'top')
+        self.label1 = tkinter.Label(self.top_frame, 
+                                   text = 'Enter a distance in kilo')
+        self.kilo_entry = tkinter.Entry(self.top_frame,
+                                        width = 10)
+        
+        self.label1.pack(side = 'left')
+        self.kilo_entry.pack(side = 'top')
         
         self.label3 = tkinter.Label(self.main_window,
                                     text = 'bottom')
@@ -26,15 +27,16 @@ class mygui:
         self.bottom_frame.pack()
         
         #botton and info box
-        self.my_button = tkinter.Button(self.main_window,
-                                        text = 'Click me!',
-                                        command = self.do_something)
+        self.calc_button = tkinter.Button(self.bottom_frame,
+                                        text = 'Convert',
+                                        command = self.convert)
         self.quit_button = tkinter.Button(self.main_window,
                                           text = 'Quit',
                                           command = self.main_window.destroy)
         self.my_button.pack()
         self.quit_button.pack()
         tkinter.mainloop()
+    def convert(self)
     def do_something(self):
         tkinter.messagebox.showinfo('Response',
                                     'Thanks for clicking the button')
